@@ -18,8 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-10 bg-neutral-200 dark:bg-neutral-950 bg-opacity-40 backdrop-filter backdrop-blur-10 border backdrop-saturate-174 border-opacity-20 border-gray-900 dark:border-gray-700">
-      {/*bg-opacity-40 backdrop-filter backdrop-blur-10 backdrop-saturate-174 border border-opacity-20*/}
+    <nav className="sticky top-0 z-50 bg-neutral-200 dark:bg-neutral-950  backdrop-filter bg-gradient-to-br dark:from-white/20 dark:to-white/5 from-black/20 to-black/5 backdrop-blur bg-opacity-90 border border-gray-900 dark:border-gray-700">
       <div className=" px-4">
         <div className="flex items-center justify-between h-16">
           <Link

@@ -2,32 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Montserrat } from "next/font/google";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
-
-export const BackgroundCellAnimation = () => {
-  return (
-    <div className="relative h-screen bg-neutral-200 dark:bg-neutral-950 flex justify-center overflow-hidden">
-      <BackgroundCellCore />
-      <div className="relative z-50 mt-40 pointer-events-none select-none">
-        <h1
-          className={`text-5xl md:text-6xl lg:text-8xl font-medium text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 dark:from-neutral-100 to-neutral-500 dark:to-neutral-400 pointer-events-none ${montserrat.className}`}
-        >
-          HorizonAI
-        </h1>
-      </div>
-      <button className="translate-y-60 md:translate-y-72 p-[2px] absolute z-50">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-        <div className="px-8 py-2  bg-slate-950 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-          Get Started
-        </div>
-      </button>
-    </div>
-  );
-};
-
-const BackgroundCellCore = () => {
+export const BackgroundCellCore = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const ref = useRef<any>(null);
