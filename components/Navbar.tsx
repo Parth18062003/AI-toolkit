@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-10 bg-white dark:bg-black bg-opacity-40 backdrop-filter backdrop-blur-10 backdrop-saturate-174 border border-opacity-20">
+    <nav className="sticky top-0 z-10 bg-neutral-200 dark:bg-neutral-950 bg-opacity-40 backdrop-filter backdrop-blur-10 border backdrop-saturate-174 border-opacity-20 border-gray-900 dark:border-gray-700">
       {/*bg-opacity-40 backdrop-filter backdrop-blur-10 backdrop-saturate-174 border border-opacity-20*/}
       <div className=" px-4">
         <div className="flex items-center justify-between h-16">
@@ -40,7 +40,7 @@ const Navbar = () => {
                   }}
                 />
               ) : (
-                user && <UserButton />
+                user && resolvedTheme ==="light" && <UserButton />
               )}
               <Menu onClick={toggleMenu} />
             </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
                 }}
               />
             ) : (
-              user && <UserButton />
+              user && resolvedTheme ==="light" && <UserButton />
             )}
           </div>
         </div>
