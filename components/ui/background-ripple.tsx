@@ -73,50 +73,72 @@ const Pattern = ({
           key={`matrix-row-${rowIdx}`}
           className="flex flex-col  relative z-20 border-b"
         >
-          {row.map((column, colIdx) => {
-            const controls = useAnimation();
-
-            useEffect(() => {
-              if (clickedCell) {
-                const distance = Math.sqrt(
-                  Math.pow(clickedCell[0] - rowIdx, 2) +
-                    Math.pow(clickedCell[1] - colIdx, 2)
-                );
-                controls.start({
-                  opacity: [0, 1 - distance * 0.1, 0],
-                  transition: { duration: distance * 0.2 },
-                });
-              }
-            }, [clickedCell]);
-
-            return (
-              <div
-                key={`matrix-col-${colIdx}`}
-                className={cn(
-                  "bg-transparent border-l border-b border-neutral-600",
-                  cellClassName
-                )}
-                onClick={() => setClickedCell([rowIdx, colIdx])}
-              >
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                  }}
-                  whileHover={{
-                    opacity: [0, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    ease: "backOut",
-                  }}
-                  animate={controls}
-                  className="bg-[rgba(56,66,68,0.3)] dark:bg-[rgba(157,178,186,0.3)] h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem]" //  rgba(157,178,186,0.3)
-                ></motion.div>
-              </div>
-            );
-          })}
+          {row.map((_, colIdx) => (
+            <PatternCell
+              key={`matrix-col-${colIdx}`}
+              rowIdx={rowIdx}
+              colIdx={colIdx}
+              cellClassName={cellClassName}
+              clickedCell={clickedCell}
+              setClickedCell={setClickedCell}
+            />
+          ))}
         </div>
       ))}
+    </div>
+  );
+};
+
+const PatternCell = ({
+  rowIdx,
+  colIdx,
+  cellClassName,
+  clickedCell,
+  setClickedCell,
+}:{
+  rowIdx: number;
+  colIdx: number;
+  cellClassName?: string;
+  clickedCell: any;
+  setClickedCell: any;
+
+}) => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (!clickedCell) return;
+    const distance = Math.sqrt(
+      Math.pow(clickedCell[0] - rowIdx, 2) +
+        Math.pow(clickedCell[1] - colIdx, 2)
+    );
+    controls.start({
+      opacity: [0, 1 - distance * 0.1, 0],
+      transition: { duration: distance * 0.2 },
+    });
+  }, [clickedCell]);
+
+  return (
+    <div
+      className={cn(
+        "bg-transparent border-l border-b border-neutral-600",
+        cellClassName
+      )}
+      onClick={() => setClickedCell([rowIdx, colIdx])}
+    >
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        whileHover={{
+          opacity: [0, 1, 0.5],
+        }}
+        transition={{
+          duration: 0.5,
+          ease: "backOut",
+        }}
+        animate={controls}
+        className="bg-[rgba(56,66,68,0.3)] dark:bg-[rgba(157,178,186,0.3)] h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem]"
+      ></motion.div>
     </div>
   );
 };
