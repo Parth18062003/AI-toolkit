@@ -5,6 +5,14 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'pbs.twimg.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'res-console.cloudinary.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.pexels.com'
             }
         ]
     }

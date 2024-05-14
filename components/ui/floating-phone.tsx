@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { FiBatteryCharging, FiWifi } from "react-icons/fi";
 import Logo from "./logo";
+import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
 
 const Phone: React.FC = () => {
   return (
@@ -56,16 +58,20 @@ const HeaderBar: React.FC = () => {
 };
 
 const Screen: React.FC = () => {
+  const { isSignedIn } = useUser();
   return (
-    <div className="relative z-0 grid h-full w-full place-content-center overflow-hidden rounded-[20px] bg-white">
+    <div className="relative z-0 grid h-full w-full place-content-center overflow-hidden rounded-[20px] bg-gradient-to-b from-neutral-100 to-neutral-400">
       <div className="w-60 h-60 translate-x-24 translate-y-1/3 text-neutral-950">
         <Logo fill="#2A2E4E" />
         <h2 className="-translate-x-3 translate-y-2">HorizonAI</h2>
       </div>
 
-      <button className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white  py-2 text-sm font-medium text-violet-800 backdrop-blur">
+      <Link
+        href={isSignedIn ? "/dashboard" : "/auth/sign-in"}
+        className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white  py-2 text-sm font-medium text-violet-800 backdrop-blur text-center"
+      >
         Get Started
-      </button>
+      </Link>
 
       <div className="absolute -bottom-72 left-[50%] h-96 w-96 -translate-x-[50%] rounded-full bg-violet-500" />
     </div>

@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-neutral-200 dark:bg-neutral-950  backdrop-filter bg-gradient-to-br dark:from-white/20 dark:to-white/5 from-black/20 to-black/5 backdrop-blur bg-opacity-90 border border-gray-900 dark:border-gray-700">
+    <nav className="sticky top-0 z-50 backdrop-filter bg-gradient-to-br dark:from-white/20 dark:to-white/5 from-black/20 to-black/5 backdrop-blur bg-opacity-90 border border-gray-900 dark:border-gray-700">
       <div className=" px-4">
         <div className="flex items-center justify-between h-16">
           <Link
@@ -26,7 +26,8 @@ const Navbar = () => {
             className="flex gap-3 items-center text-2xl text-gray-900 dark:text-gray-200 font-semibold translate-x-1"
           >
             <Logo />
-            <div className="hidden md:flex">HorizonAI</div><span className="sr-only">HorizonAI</span>
+            <div className="hidden md:flex">HorizonAI</div>
+            <span className="sr-only">HorizonAI</span>
           </Link>
           <div className="flex space-x-4 text-gray-900 dark:text-gray-200">
             {/* Menu Button for Small Screens */}
@@ -39,16 +40,18 @@ const Navbar = () => {
                   }}
                 />
               ) : (
-                user && resolvedTheme ==="light" && <UserButton />
+                user && resolvedTheme === "light" && <UserButton />
               )}
               <Menu onClick={toggleMenu} />
             </div>
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex space-x-4 mt-3">
+              <Link href="/">Home</Link>
+
+              <Link href="#">About </Link>
+              <Link href="#">Contact</Link>
               <Link href="/dashboard">Dashboard</Link>
-              <Link href="#">About</Link>
-              <Link href="#">Projects</Link>
-              <Link href="/auth/sign-in">Login</Link>
+              <Link href="/auth/sign-in">Sign In</Link>
             </div>
           </div>
           <div className="hidden md:flex -translate-x-5 space-x-5">
@@ -60,7 +63,7 @@ const Navbar = () => {
                 }}
               />
             ) : (
-              user && resolvedTheme ==="light" && <UserButton />
+              user && resolvedTheme === "light" && <UserButton />
             )}
           </div>
         </div>

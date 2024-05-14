@@ -46,7 +46,7 @@ export const BackgroundCellCore = () => {
             WebkitMaskRepeat: "no-repeat",
           }}
         >
-          <Pattern cellClassName="border-blue-600 relative z-[100]" />
+          <Pattern cellClassName="border-violet-600 relative z-[100]" />
         </div>
         <Pattern className="opacity-[0.5]" cellClassName="border-neutral-700" />
       </div>
@@ -61,8 +61,8 @@ const Pattern = ({
   className?: string;
   cellClassName?: string;
 }) => {
-  const x = new Array(28).fill(0);
-  const y = new Array(5).fill(0);
+  const x = new Array(25).fill(0);
+  const y = new Array(4).fill(0);
   const matrix = x.map((_, i) => y.map((_, j) => [i, j]));
   const [clickedCell, setClickedCell] = useState<any>(null);
 
@@ -110,7 +110,7 @@ const Pattern = ({
                     ease: "backOut",
                   }}
                   animate={controls}
-                  className="bg-[rgba(56,66,68,0.3)] dark:bg-[rgba(157,178,186,0.3)] h-[4.5rem] w-[4.5rem]" //  rgba(157,178,186,0.3)
+                  className="bg-[rgba(56,66,68,0.3)] dark:bg-[rgba(157,178,186,0.3)] h-[3rem] sm:h-[5rem] w-[3rem] sm:w-[5rem]" //  rgba(157,178,186,0.3)
                 ></motion.div>
               </div>
             );

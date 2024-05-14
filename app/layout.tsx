@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -35,6 +36,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Footer />
           </ThemeProvider>
         </body>
       </html>
