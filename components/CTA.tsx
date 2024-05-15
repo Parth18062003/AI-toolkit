@@ -19,7 +19,7 @@ const CTA = () => {
           Unleash the power of AI to transform your projects.
         </p>
         <Link
-          href={isSignedIn ? "/dashboard" : "/auth/sign-in"}
+          href={isSignedIn ? "/get-started" : "/auth/sign-in"}
           className="bg-indigo-500 text-white font-medium py-3 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95"
         >
           Get Started Now{" "}

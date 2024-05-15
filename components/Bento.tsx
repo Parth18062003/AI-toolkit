@@ -25,6 +25,7 @@ export function Bento() {
           header={item.header}
           className={cn("[&>p:text-lg]", item.className)}
           icon={item.icon}
+          href={item.href}
         />
       ))}
     </BentoGrid>
@@ -355,6 +356,7 @@ const items = [
     icon: (
       <IoMdChatbubbles className="h-4 w-4 text-neutral-600 dark:text-neutral-200" />
     ),
+    href: "/text-generation",
   },
   {
     title: "Audio Generation",
@@ -368,6 +370,7 @@ const items = [
     icon: (
       <MdAudiotrack className="h-4 w-4 text-neutral-600 dark:text-neutral-200" />
     ),
+    href: "/audio-generation",
   },
   {
     title: "Video Generation",
@@ -381,6 +384,7 @@ const items = [
     icon: (
       <TbVideo className="h-4 w-4 text-neutral-600 dark:text-neutral-200" />
     ),
+    href: "/video-generation",
   },
   {
     title: "Image Generation",
@@ -394,6 +398,7 @@ const items = [
     icon: (
       <FaImages className="h-4 w-4 text-neutral-600 dark:text-neutral-200" />
     ),
+    href: "/image-generation",
   },
 
   {
@@ -406,5 +411,6 @@ const items = [
     header: <SkeletonFive />,
     className: "md:col-span-1",
     icon: <TbCode className="h-4 w-4 text-neutral-600 dark:text-neutral-200" />,
+    href: "/code-generation",
   },
 ];

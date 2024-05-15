@@ -67,7 +67,7 @@ const Screen: React.FC = () => {
       </div>
 
       <Link
-        href={isSignedIn ? "/dashboard" : "/auth/sign-in"}
+        href={isSignedIn ? "/get-started" : "/auth/sign-in"}
         className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white  py-2 text-sm font-medium text-violet-800 backdrop-blur text-center"
       >
         Get Started

@@ -23,7 +23,7 @@ export const Hero = () => {
             <Typewriter />
           </h2>
         </div>
-        <Link href={isSignedIn ? "/dashboard" : "/auth/sign-in"} className="translate-y-80 md:translate-y-96 p-[2px] absolute z-40">
+        <Link href={isSignedIn ? "/get-started" : "/auth/sign-in"} className="translate-y-80 md:translate-y-96 p-[2px] absolute z-40">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-slate-950 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Get Started

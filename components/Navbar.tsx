@@ -10,7 +10,7 @@ import { useTheme } from "next-themes";
 import { dark } from "@clerk/themes";
 
 const Navbar = () => {
-  const { user } = useUser();
+  const { user, isSignedIn } = useUser();
   const [menuOpen, setMenuOpen] = useState(false);
   const { resolvedTheme } = useTheme();
   const toggleMenu = () => {
@@ -38,20 +38,19 @@ const Navbar = () => {
                   appearance={{
                     baseTheme: dark,
                   }}
+                  userProfileUrl="/user-profile"
                 />
               ) : (
-                user && resolvedTheme === "light" && <UserButton />
+                user && resolvedTheme === "light" && <UserButton userProfileUrl="/user-profile"/>
               )}
               <Menu onClick={toggleMenu} />
             </div>
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex space-x-4 mt-3">
               <Link href="/">Home</Link>
-
-              <Link href="#">About </Link>
+              <Link href="/get-started">Get Started </Link>
               <Link href="#">Contact</Link>
-              <Link href="/dashboard">Dashboard</Link>
-              <Link href="/auth/sign-in">Sign In</Link>
+              {isSignedIn ? <Link href="/user-profile">Profile</Link> : <Link href="/auth/sign-in">Sign In</Link>}
             </div>
           </div>
           <div className="hidden md:flex -translate-x-5 space-x-5">
@@ -61,9 +60,10 @@ const Navbar = () => {
                 appearance={{
                   baseTheme: dark,
                 }}
+                userProfileUrl="/user-profile"
               />
             ) : (
-              user && resolvedTheme === "light" && <UserButton />
+              user && resolvedTheme === "light" && <UserButton userProfileUrl="/user-profile"/>
             )}
           </div>
         </div>
@@ -71,10 +71,9 @@ const Navbar = () => {
         {menuOpen && (
           <div className="md:hidden mt-3">
             <div className="flex flex-col items-end space-y-3 mb-2 text-xl">
-              <Link href="/dashboard">Dashboard</Link>
-              <Link href="#">About</Link>
-              <Link href="#">Projects</Link>
-              <Link href="/auth/sign-in">Login</Link>
+              <Link href="/">Home</Link>              <Link href="/get-started">Get Started </Link>
+              <Link href="#">Contact</Link>
+              {isSignedIn ? <Link href="/user-profile">Profile</Link> : <Link href="/auth/sign-in">Sign In</Link>}
             </div>
           </div>
         )}

@@ -13,7 +13,7 @@ const Footer = () => {
       <footer className="bg-gradient-to-br dark:from-white/20 dark:to-white/5 from-black/20 to-black/5">
         <div className="mx-auto max-w-3xl py-8">
           <div className="flex justify-center">
-            <h4 className="text-black dark:text-white text-3xl">HorizonAI</h4>
+            <div className="text-black dark:text-white text-3xl">HorizonAI</div>
           </div>
 
           <ul className="translate-y-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
