@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ModeToggle } from "./ui/darkMode-toggle";
 import Link from "next/link";
 import Menu from "./ui/menu-button";
@@ -8,6 +8,10 @@ import Logo from "./ui/logo";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { useTheme } from "next-themes";
 import { dark } from "@clerk/themes";
+import { Separator } from "./ui/separator";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Navbar = () => {
   const { user, isSignedIn } = useUser();
@@ -26,7 +30,7 @@ const Navbar = () => {
             className="flex gap-3 items-center text-2xl text-gray-900 dark:text-gray-200 font-semibold translate-x-1"
           >
             <Logo />
-            <div className="hidden md:flex">HorizonAI</div>
+            <div className={`hidden md:flex ${montserrat.className}`}>HorizonAI</div>
             <span className="sr-only">HorizonAI</span>
           </Link>
           <div className="flex space-x-4 text-gray-900 dark:text-gray-200">
@@ -41,7 +45,10 @@ const Navbar = () => {
                   userProfileUrl="/user-profile"
                 />
               ) : (
-                user && resolvedTheme === "light" && <UserButton userProfileUrl="/user-profile"/>
+                user &&
+                resolvedTheme === "light" && (
+                  <UserButton userProfileUrl="/user-profile" />
+                )
               )}
               <Menu onClick={toggleMenu} />
             </div>
@@ -49,8 +56,12 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-4 mt-3">
               <Link href="/">Home</Link>
               <Link href="/get-started">Get Started </Link>
-              <Link href="#">Contact</Link>
-              {isSignedIn ? <Link href="/user-profile">Profile</Link> : <Link href="/auth/sign-in">Sign In</Link>}
+              <Link href="/pricing-plan">Pricing</Link>
+              {isSignedIn ? (
+                <Link href="/user-profile">Profile</Link>
+              ) : (
+                <Link href="/auth/sign-in">Sign In</Link>
+              )}
             </div>
           </div>
           <div className="hidden md:flex -translate-x-5 space-x-5">
@@ -63,7 +74,10 @@ const Navbar = () => {
                 userProfileUrl="/user-profile"
               />
             ) : (
-              user && resolvedTheme === "light" && <UserButton userProfileUrl="/user-profile"/>
+              user &&
+              resolvedTheme === "light" && (
+                <UserButton userProfileUrl="/user-profile" />
+              )
             )}
           </div>
         </div>
@@ -71,9 +85,21 @@ const Navbar = () => {
         {menuOpen && (
           <div className="md:hidden mt-3">
             <div className="flex flex-col items-end space-y-3 mb-2 text-xl">
-              <Link href="/">Home</Link>              <Link href="/get-started">Get Started </Link>
-              <Link href="#">Contact</Link>
-              {isSignedIn ? <Link href="/user-profile">Profile</Link> : <Link href="/auth/sign-in">Sign In</Link>}
+              <Link href="/">Home</Link>{" "}
+              <Link href="/get-started">Get Started </Link>
+              <Link href="/pricing-plan">Pricing</Link>
+              {isSignedIn ? (
+                <Link href="/user-profile">Profile</Link>
+              ) : (
+                <Link href="/auth/sign-in">Sign In</Link>
+              )}
+              <Separator className="" />
+              <p className="font-bold text-2xl">Models</p>
+              <Link href="/">Conversation</Link>{" "}
+              <Link href="/get-started">Image </Link>
+              <Link href="/pricing-plan">Video</Link>
+              <Link href="/user-profile">Audio</Link>
+              <Link href="/auth/sign-in">Code</Link>
             </div>
           </div>
         )}

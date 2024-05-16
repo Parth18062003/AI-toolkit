@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="text-black dark:text-white text-3xl">HorizonAI</div>
           </div>
 
-          <ul className="translate-y-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
+          <ul className="translate-y-6 flex flex-wrap justify-center flex-col sm:flex-row gap-4 text-center md:gap-8 lg:gap-10">
             <li>
               <Link
                 href={!isSignedIn ? "/sign-in" : "/profile"}

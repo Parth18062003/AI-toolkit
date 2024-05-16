@@ -42,7 +42,7 @@ export const BentoGridItem = ({
         className
       )}
     >
-      <Link href={href || '/'}>
+      
       {header}
       <div className="group-hover/bento:translate-x-2 transition duration-200">
         {icon}
@@ -53,7 +53,6 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-      </Link>
     </div>
   );
 };
