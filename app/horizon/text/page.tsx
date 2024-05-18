@@ -1,8 +1,9 @@
+import ConversationUI from '@/components/ConversationUI'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Image</div>
+    <ConversationUI />
   )
 }
 

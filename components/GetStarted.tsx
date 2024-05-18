@@ -27,31 +27,31 @@ export const GetStarted = () => {
           heading="Conversation"
           subheading="Because talking to yourself is overrated"
           imgSrc="https://plus.unsplash.com/premium_photo-1666298863696-8e8da5d85f2b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dGV4dGluZ3xlbnwwfHwwfHx8MA%3D%3D"
-          href="/horizon/text-generation"
+          href="/horizon/text"
         />
         <Link
           heading="Image"
           subheading="Because drawing is for amateurs"
           imgSrc="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-          href="/horizon/image-generation"
+          href="/horizon/image"
         />
         <Link
           heading="Audio"
           subheading="Because who needs a real musician?"
           imgSrc="https://images.unsplash.com/photo-1461784121038-f088ca1e7714?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bXVzaWMlMjBpbnN0cnVtZW50c3xlbnwwfHwwfHx8MA%3D%3D"
-          href="/horizon/audio-generation"
+          href="/horizon/audio"
         />
         <Link
           heading="Video"
           subheading="Because you're not Spielberg, but close"
           imgSrc="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlkZW98ZW58MHx8MHx8fDA%3D"
-          href="/horizon/video-generation"
+          href="/horizon/video"
         />
         <Link
           heading="Code"
           subheading="Because typing is for dinosaurs"
           imgSrc="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29kZXxlbnwwfHwwfHx8MA%3D%3D"
-          href="/horizon/code-generation"
+          href="/horizon/code"
         />
       </div>
       <div className="flex items-center justify-center mt-10">

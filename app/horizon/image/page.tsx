@@ -1,8 +1,9 @@
+import ImageUI from '@/components/ImageUI'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <ImageUI />
   )
 }
 

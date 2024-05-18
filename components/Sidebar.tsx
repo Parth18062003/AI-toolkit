@@ -9,27 +9,27 @@ import { TbCode, TbUserFilled, TbVideo } from "react-icons/tb";
 
 const links = [
   {
-    href: "/horizon/text-generation",
+    href: "/horizon/text",
     label: "Conversation",
     icon: <IoMdChatbubbles className="h-5 w-5 mr-3" />,
   },
   {
-    href: "/horizon/image-generation",
+    href: "/horizon/image",
     label: "Image",
     icon: <FaImages className="h-5 w-5 mr-3" />,
   },
   {
-    href: "/horizon/audio-generation",
+    href: "/horizon/audio",
     label: "Audio",
     icon: <MdAudiotrack className="h-5 w-5 mr-3" />,
   },
   {
-    href: "/horizon/video-generation",
+    href: "/horizon/video",
     label: "Video",
     icon: <TbVideo className="h-5 w-5 mr-3" />,
   },
   {
-    href: "/horizon/code-generation",
+    href: "/horizon/code",
     label: "Code",
     icon: <TbCode className="h-5 w-5 mr-3" />,
   },

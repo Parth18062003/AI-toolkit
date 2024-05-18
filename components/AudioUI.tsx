@@ -3,13 +3,13 @@ import Header from "./ui/chat-header";
 import ChatInput from "./ui/chatInput";
 
 const placeholders = [
-  "Discuss time travel's impact with historical figures.",
-  "Chat with an AI about colonizing Mars.",
-  "Imagine headlines from 2050 with an AI.",
-  "Engage in a conversation about AI self-awareness.",
+  "Compose a futuristic soundtrack for a sci-fi movie.",
+  "Produce an ambient music track inspired by space exploration.",
+  "Create a podcast intro discussing AI ethics.",
+  "Generate a radio drama script set in a post-apocalyptic world.",
 ];
 
-const ConversationUI = () => {
+const AudioUI = () => {
   return (
     <div>
       <Header
@@ -24,4 +24,4 @@ const ConversationUI = () => {
   );
 };
 
-export default ConversationUI;
+export default AudioUI;

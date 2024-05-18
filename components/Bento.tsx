@@ -356,7 +356,7 @@ const items = [
     icon: (
       <IoMdChatbubbles className="h-4 w-4 text-neutral-600 dark:text-neutral-200" />
     ),
-    href: "/text-generation",
+    href: "/text",
   },
   {
     title: "Audio Generation",

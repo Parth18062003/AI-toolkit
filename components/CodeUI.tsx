@@ -3,13 +3,13 @@ import Header from "./ui/chat-header";
 import ChatInput from "./ui/chatInput";
 
 const placeholders = [
-  "Discuss time travel's impact with historical figures.",
-  "Chat with an AI about colonizing Mars.",
-  "Imagine headlines from 2050 with an AI.",
-  "Engage in a conversation about AI self-awareness.",
+  "Write CSS to center a div horizontally and vertically.",
+  "Implement a Java program to generate the Fibonacci sequence.",
+  "Create a Python function to count the occurrence of a word in a string.",
+  "Design JavaScript code to validate email addresses using regular expressions."
 ];
 
-const ConversationUI = () => {
+const CodeUI = () => {
   return (
     <div>
       <Header
@@ -24,4 +24,4 @@ const ConversationUI = () => {
   );
 };
 
-export default ConversationUI;
+export default CodeUI;
