@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header = ({ title, description, icon }: HeaderProps) => {
   return (
-    <div className="w-full p-6 lg:p-8 flex flex-col md:flex-row justify-between gap-4 mb-8">
+    <div className="w-full p-6 lg:p-8 flex flex-col md:flex-row justify-between gap-4 mb-3">
       <div className="flex flex-col">
         <h2 className="text-3xl lg:text-4xl font-semibold">{title}</h2>
         <p className="text-base lg:text-lg">{description}</p>

@@ -10,7 +10,7 @@ const Footer = () => {
   const { isSignedIn } = useUser();
   return (
     <>
-      <footer className="bg-gradient-to-br dark:from-white/20 dark:to-white/5 from-black/20 to-black/5">
+      <footer className="bg-gradient-to-br dark:from-white/20 dark:to-white/5 from-black/20 to-black/5 bottom-0 left-0">
         <div className="mx-auto max-w-3xl py-8">
           <div className="flex justify-center">
             <div className="text-black dark:text-white text-3xl">HorizonAI</div>

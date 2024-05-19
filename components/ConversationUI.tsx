@@ -11,15 +11,16 @@ const placeholders = [
 
 const ConversationUI = () => {
   return (
-    <div>
+    <div className="w-full">
       <Header
         title="Conversation"
         description="Our most advanced conversational model"
       />
-
-      <ChatInput placeholders={placeholders} />
-
-      <div className="space-y-4 mt-4">Messages</div>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <ChatInput placeholders={placeholders} />
+        </div>
+      </div>
     </div>
   );
 };

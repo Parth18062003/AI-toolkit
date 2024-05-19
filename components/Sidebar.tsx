@@ -42,7 +42,7 @@ const links = [
 
 const Sidebar = () => {
   return (
-    <div className="space-y-4 py-4 flex flex-col h-screen">
+    <div className="space-y-4 py-4 flex flex-col h-full fixed">
       <div className="px-3 py-2 flex-1">
         <h2 className="font-semibold text-2xl text-neutral-800 dark:text-neutral-200">
           Models
