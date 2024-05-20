@@ -95,11 +95,11 @@ const Navbar = () => {
               )}
               <Separator className="" />
               <p className="font-bold text-2xl">Models</p>
-              <Link href="/">Conversation</Link>{" "}
-              <Link href="/get-started">Image </Link>
-              <Link href="/pricing-plan">Video</Link>
-              <Link href="/user-profile">Audio</Link>
-              <Link href="/auth/sign-in">Code</Link>
+              <Link href="/horizon/text">Conversation</Link>{" "}
+              <Link href="/horizon/image">Image </Link>
+              <Link href="/horizon/video">Video</Link>
+              <Link href="/horizon/audio">Audio</Link>
+              <Link href="/horizon/code">Code</Link>
             </div>
           </div>
         )}
