@@ -401,12 +401,13 @@ import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import Logo from "./logo";
+import ReactMarkdown from "react-markdown";
 
 type ChatInputProps = {
   placeholders: string[];
 };
 
-const ChatInput: React.FC<ChatInputProps> = ({ placeholders }) => {
+const ChatInput: React.FC = () => {
   const form = useForm<z.infer<typeof ConversationSchema>>({
     resolver: zodResolver(ConversationSchema),
     defaultValues: {
@@ -419,9 +420,6 @@ const ChatInput: React.FC<ChatInputProps> = ({ placeholders }) => {
     []
   );
   const isLoading = form.formState.isSubmitting;
-  const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const newDataRef = useRef<any[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState("");
   const [animating, setAnimating] = useState(false);
@@ -479,7 +477,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ placeholders }) => {
 
   return (
     <>
-      <div className="max-w-4xl mx-3 sm:mx-auto mt-4 overflow-x-auto">
+      <div className="max-w-4xl mx-3 sm:mx-auto mt-4" >
         {messages.map((message, index) => (
           <div key={index}>
             {message.role === "user" && (
@@ -503,7 +501,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ placeholders }) => {
                       </AvatarFallback>
                     </Avatar>
                   </div>
-                  <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-md border my-3 p-2 max-w-3xl">
+                  <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-md border my-3 p-2 max-w-3xl">
                     {message.content}
                     <p className="text-neutral-800 dark:text-neutral-200"></p>
                   </div>
@@ -519,8 +517,9 @@ const ChatInput: React.FC<ChatInputProps> = ({ placeholders }) => {
                     Horizon
                   </span>
                 </div>
-                <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-md border my-3 p-4 text-neutral-800 dark:text-neutral-200">
-                  <pre>{message.content}</pre>
+                <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl overflow-x-scroll sm:overflow-x-auto shadow-md border my-3 p-4 text-neutral-800 dark:text-neutral-200">
+                  <ReactMarkdown>{message.content}</ReactMarkdown>
+                  {/* <pre>{message.content}</pre> */}
                 </div>
               </div>
             )}
@@ -528,6 +527,11 @@ const ChatInput: React.FC<ChatInputProps> = ({ placeholders }) => {
         ))}
       </div>
 
+      {isLoading && (
+        <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-md border my-3 p-4 text-neutral-800 dark:text-neutral-200">
+          Horizon is thinking...
+        </div>
+      )}
       <Form {...form}>
         <form
           id="prompt-form"
@@ -614,4 +618,3 @@ const ChatInput: React.FC<ChatInputProps> = ({ placeholders }) => {
 };
 
 export default ChatInput;
-
