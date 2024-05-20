@@ -46,7 +46,7 @@ const Content = () => {
         404
       </p>
       <p className="text-center text-neutral-600 dark:text-neutral-400">
-        Oops! The page you're looking for doesn't exist.
+        Oops! The page you%apos;re looking for doesn&apos;t exist.
       </p>
       <div className="flex items-center justify-center gap-3">
         <Link href='/' className="w-fit bg-neutral-950 dark:bg-neutral-200  px-4 py-2 font-semibold dark:text-neutral-700 text-neutral-300 transition-colors dark:hover:bg-neutral-50 hover:bg-neutral-700">
