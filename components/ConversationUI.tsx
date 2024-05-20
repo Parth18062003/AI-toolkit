@@ -62,7 +62,7 @@ const ConversationUI = () => {
         assistantMessage,
       ]);
       setUserPrompt([values.prompt]);
-      saveChatHistory([...messages, userMessage, assistantMessage]);
+      //saveChatHistory([...messages, userMessage, assistantMessage]);
       setValue("");
       form.reset();
     } catch (error) {
@@ -72,7 +72,7 @@ const ConversationUI = () => {
     }
   };
 
-  useEffect(() => {
+/*   useEffect(() => {
     const savedChatHistory = localStorage.getItem("chatHistory");
     if (savedChatHistory) {
       setMessages(JSON.parse(savedChatHistory));
@@ -84,7 +84,7 @@ const ConversationUI = () => {
       localStorage.setItem("chatHistory", JSON.stringify(messages));
     },
     []
-  );
+  ); */
 
   return (
     <div className="w-full">
