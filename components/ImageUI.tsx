@@ -172,7 +172,7 @@ export default function ImageUI() {
                         </p>
                         <button
                           onClick={() => handleDownload(message.image!)}
-                          className="bg-indigo-500 text-white font-medium py-3 px-4 rounded-xl transition-all
+                          className="bg-indigo-500 text-white font-medium py-3 px-4 rounded-lg transition-all
                           hover:bg-indigo-600 active:scale-95"
                         >
                           <span className="sr-only">Download</span>
