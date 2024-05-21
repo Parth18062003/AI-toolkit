@@ -503,7 +503,6 @@ const ChatInput: React.FC = () => {
                   </div>
                   <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-md border my-3 p-2 max-w-3xl">
                     {message.content}
-                    <p className="text-neutral-800 dark:text-neutral-200"></p>
                   </div>
                 </div>
               </div>

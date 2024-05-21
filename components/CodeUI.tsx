@@ -62,7 +62,7 @@ const CodeUI = () => {
         assistantMessage,
       ]);
       setUserPrompt([values.prompt]);
-    //  saveChatHistory([...messages, userMessage, assistantMessage]);
+      //  saveChatHistory([...messages, userMessage, assistantMessage]);
       setValue("");
       form.reset();
     } catch (error) {
@@ -72,7 +72,7 @@ const CodeUI = () => {
     }
   };
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     const savedChatHistory = localStorage.getItem("chatHistory");
     if (savedChatHistory) {
       setMessages(JSON.parse(savedChatHistory));
@@ -119,8 +119,7 @@ const CodeUI = () => {
                         </Avatar>
                       </div>
                       <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-md border my-3 p-2 max-w-3xl">
-                        {message.content}
-                        <p className="text-neutral-800 dark:text-neutral-200"></p>
+                        <p className="p-1">{message.content}</p>
                       </div>
                     </div>
                   </div>
@@ -231,10 +230,10 @@ const CodeUI = () => {
             Horizon can make mistakes. Please check important info.
           </span>
           {messages.length === 0 && !isLoading && (
-        <div className="flex justify-center">
-          <Image src={cat} alt="cat" width={600} height={600} />
-        </div>
-      )}
+            <div className="flex justify-center">
+              <Image src={cat} alt="cat" width={600} height={600} />
+            </div>
+          )}
         </div>
       </div>
     </div>

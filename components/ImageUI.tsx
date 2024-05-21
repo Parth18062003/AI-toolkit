@@ -84,7 +84,7 @@ export default function ImageUI() {
       setPrediction(prediction);
 
       if (prediction.status !== "succeeded" && prediction.status !== "failed") {
-        setTimeout(pollEndpoint, 5000); 
+        setTimeout(pollEndpoint, 5000);
       } else if (prediction.status === "succeeded" && prediction.output) {
         const outputImage = prediction.output[prediction.output.length - 1];
         if (outputImage) {
@@ -151,7 +151,7 @@ export default function ImageUI() {
                       </Avatar>
                     </div>
                     <div className="bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-md border my-3 p-2 px-4 max-w-3xl">
-                      {message.content}
+                      <p className="p-1">{message.content}</p>
                     </div>
                   </div>
                 </div>
