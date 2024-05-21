@@ -77,7 +77,6 @@ const AudioUI = () => {
           <div className="max-w-4xl mx-3 sm:mx-auto mt-4">
             {history.map((item, index) => (
               <>
-                {" "}
                 <div
                   className="mx-3 sm:mx-auto max-w-4xl flex justify-end gap-x-3 items-start mt-4"
                   key={index}
@@ -106,7 +105,7 @@ const AudioUI = () => {
                     </div>
                   </div>
                 </div>
-                <div className="max-w-4xl mx-3 sm:mx-auto" key={index}>
+                <div className="max-w-4xl mx-3 sm:mx-auto" key={index+1}>
                   <div className="flex gap-x-3 items-start">
                     <Logo />
                     <span className="text-gray-700 dark:text-gray-300 self-center font-semibold text-xl">
@@ -211,7 +210,7 @@ const AudioUI = () => {
           </span>
           {!music && !isLoading && (
             <div className="flex justify-center">
-              <Image src={cat} alt="cat" width={600} height={600} />
+              <Image src={cat} alt="cat" width={600} height={600} priority/>
             </div>
           )}
         </div>

@@ -286,7 +286,7 @@ export default function ImageUI() {
 
         {messages.length === 0 && !isLoading && (
           <div className="flex justify-center">
-            <Image src={cat} alt="cat" width={600} height={600} />
+            <Image src={cat} alt="cat" width={600} height={600} priority/>
           </div>
         )}
       </div>
