@@ -73,7 +73,7 @@ const Screen: React.FC = () => {
         Get Started
       </Link>
 
-      <div className="absolute -bottom-72 left-[50%] h-96 w-96 -translate-x-[50%] rounded-full bg-violet-500" />
+      <div className="absolute -bottom-72 left-[50%] h-96 w-96 -translate-x-[50%] rounded-full bg-gradient-to-r from-indigo-500 to-purple-500" />
     </div>
   );
 };

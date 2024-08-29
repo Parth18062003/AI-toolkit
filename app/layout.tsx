@@ -13,7 +13,8 @@ const inter = Roboto({
 
 export const metadata: Metadata = {
   title: "HorizonAI",
-  description: "HorizonAI is a comprehensive AI toolkit that enables generation of images, text, audio, video, and code. Explore advanced AI capabilities for creative projects and development tasks.",
+  description:
+    "HorizonAI is a comprehensive AI toolkit that enables generation of images, text, audio, video, and code. Explore advanced AI capabilities for creative projects and development tasks.",
   other: {
     "theme-color": "#0a0a0a",
   },
@@ -27,6 +28,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
+        <head>
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+        </head>
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
